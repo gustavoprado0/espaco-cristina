@@ -1,9 +1,9 @@
 import { Clock, Sparkles, Star } from "lucide-react";
-import { Button } from "./ui/Button";
+import { Button } from "../ui/Button";
 
 export const Hero: React.FC<{ onNavigate: (section: string) => void }> = ({ onNavigate }) => {
   return (
-    <section className="pt-24 pb-16 bg-gradient-to-br from-pink-50 via-purple-50 to-pink-50">
+    <section className="py-30 bg-gradient-to-br from-pink-50 via-purple-50 to-pink-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">

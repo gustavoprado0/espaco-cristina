@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import { Button } from "./ui/Button";
+import { Button } from "../ui/Button";
 
 interface Service {
     id: string;
@@ -41,7 +41,7 @@ export const ServicesSection: React.FC = () => {
         : services.filter(s => s.category === selectedCategory);
 
     return (
-        <section className="py-30 bg-white">
+        <section className="py-30 bg-gradient-to-br from-pink-50 to-purple-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Nossos Serviços</h2>
@@ -55,7 +55,7 @@ export const ServicesSection: React.FC = () => {
                             onClick={() => setSelectedCategory(cat.id)}
                             className={`px-6 py-2 rounded-full font-medium transition cursor-pointer ${selectedCategory === cat.id
                                 ? 'bg-gradient-to-r from-pink-600 to-purple-600 text-white'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                : 'bg-white text-gray-700 border border-pink-300'
                                 }`}
                         >
                             {cat.name}
@@ -65,7 +65,7 @@ export const ServicesSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredServices.map(service => (
-                        <div key={service.id} className="bg-gradient-to-br from-pink-50 to-purple-50 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+                        <div key={service.id} className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
                             <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.name}</h3>
                             <p className="text-gray-600 mb-4">{service.description}</p>
                             <div className="flex justify-between items-center">

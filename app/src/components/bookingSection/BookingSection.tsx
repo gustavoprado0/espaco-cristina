@@ -2,8 +2,9 @@
 
 import { CheckCircle } from "lucide-react";
 import { useState } from "react";
-import { Button } from "./ui/Button";
-import { Input } from "./ui/Input";
+import { Button } from "../ui/Button";
+import { Input } from "../ui/Input";
+
 
 interface Service {
     id: string;

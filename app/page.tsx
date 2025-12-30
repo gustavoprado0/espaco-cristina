@@ -3,19 +3,30 @@
 import React, { useState } from 'react';
 
 import { Header } from './src/components/Header';
-import { Hero } from './src/components/Hero';
-import { ServicesSection } from './src/components/ServicesSection';
-import { BookingSection } from './src/components/BookingSection';
-import { ContactSection } from './src/components/ContactSection';
-import { TestimonialsSection } from './src/components/TestimonialsSection';
+import { Hero } from './src/components/hero/Hero';
+import { HeroSkeleton } from './src/components/hero/HeroSkeleton';
 import { Footer } from './src/components/Footer';
+import { ServicesSkeleton } from './src/components/servicesSection/ServicesSkeleton';
+import { ServicesSection } from './src/components/servicesSection/ServicesSection';
+import { TestimonialsSection } from './src/components/testimonialsSection/TestimonialsSection';
+import { BookingSkeleton } from './src/components/bookingSection/BookingSkeleton';
+import { BookingSection } from './src/components/bookingSection/BookingSection';
+import { ContactSkeleton } from './src/components/contactSection/ContactSkeleton';
+import { ContactSection } from './src/components/contactSection/ContactSection';
+import { TestimonialsSkeleton } from './src/components/testimonialsSection/TestimonialsSectionSkeleton';
+import { AboutSkeleton } from './src/components/about/AboutSkeleton';
+import { About } from './src/components/about/About';
 
 const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState('home');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleNavigate = (section: string) => {
+    setIsLoading(true);
     setCurrentSection(section);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    setTimeout(() => setIsLoading(false), 700);
   };
 
   return (
@@ -23,45 +34,32 @@ const App: React.FC = () => {
       <Header onNavigate={handleNavigate} />
 
       {currentSection === 'home' && (
-        <>
-          <Hero onNavigate={handleNavigate} />
-          <ServicesSection />
-          <TestimonialsSection />
-        </>
+        isLoading ? (
+          <>
+            <HeroSkeleton />
+            <ServicesSkeleton />
+            <TestimonialsSkeleton />
+          </>
+        ) : (
+          <>
+            <Hero onNavigate={handleNavigate} />
+            <ServicesSection />
+            <TestimonialsSection />
+          </>
+        )
       )}
 
-      {currentSection === 'services' && <ServicesSection />}
-      {currentSection === 'booking' && <BookingSection />}
-      {currentSection === 'contact' && <ContactSection />}
+      {currentSection === 'services' &&
+        (isLoading ? <ServicesSkeleton /> : <ServicesSection />)}
+
+      {currentSection === 'booking' &&
+        (isLoading ? <BookingSkeleton /> : <BookingSection />)}
+
+      {currentSection === 'contact' &&
+        (isLoading ? <ContactSkeleton /> : <ContactSection />)}
 
       {currentSection === 'about' && (
-        <section className="py-30 bg-white pt-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
-              Sobre o Espaço Cristina
-            </h2>
-
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-600 mb-6">
-                Há mais de 15 anos, o Espaço Cristina tem sido referência em beleza
-                e cuidados capilares na região. Fundado pela renomada cabeleireira
-                Cristina, nosso salão nasceu do sonho de criar um espaço onde cada
-                cliente se sinta especial e única.
-              </p>
-
-              <p className="text-gray-600 mb-6">
-                Nossa missão é realçar a beleza natural de cada mulher,
-                proporcionando serviços de excelência com produtos premium e
-                técnicas atualizadas.
-              </p>
-
-              <p className="text-gray-600">
-                No Espaço Cristina, você encontra um ambiente acolhedor,
-                profissionais qualificados e um atendimento personalizado.
-              </p>
-            </div>
-          </div>
-        </section>
+        (isLoading ? <AboutSkeleton /> : <About /> )
       )}
 
       <Footer />

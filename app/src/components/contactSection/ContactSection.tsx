@@ -1,6 +1,7 @@
 import { Clock, Facebook, Instagram, MapPin, Phone } from "lucide-react";
-import { Button } from "./ui/Button";
-import { Input } from "./ui/Input";
+import { Input } from "../ui/Input";
+import { Button } from "../ui/Button";
+
 
 export const ContactSection: React.FC = () => {
     return (
@@ -18,14 +19,14 @@ export const ContactSection: React.FC = () => {
                                 <Phone className="h-6 w-6 text-pink-600 mt-1" />
                                 <div>
                                     <p className="font-bold text-gray-900">Telefone/WhatsApp</p>
-                                    <p className="text-gray-600">(11) 98765-4321</p>
+                                    <p className="text-gray-600">(11) 96878-4638</p>
                                 </div>
                             </div>
                             <div className="flex items-start space-x-4">
                                 <MapPin className="h-6 w-6 text-pink-600 mt-1" />
                                 <div>
                                     <p className="font-bold text-gray-900">Endereço</p>
-                                    <p className="text-gray-600">Rua das Flores, 123 - Centro<br />São Paulo - SP, 01234-567</p>
+                                    <p className="text-gray-600">Rua Jacob, 609 - Jardim Tranquilidade<br />Guarulhos - SP, 07051-020</p>
                                 </div>
                             </div>
                             <div className="flex items-start space-x-4">
