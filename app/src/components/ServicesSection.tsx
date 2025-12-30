@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react";
+import { Button } from "./ui/Button";
 
 interface Service {
     id: string;
@@ -24,7 +25,6 @@ export const ServicesSection: React.FC = () => {
         { id: 'unha', name: 'Unhas' },
     ];
 
-    // Data
     const services: Service[] = [
         { id: '1', name: 'Corte Feminino', description: 'Corte personalizado com acabamento profissional', duration: '45min', price: 'R$ 80', category: 'corte' },
         { id: '2', name: 'Escova Modelada', description: 'Escova com modelagem e finalização', duration: '1h', price: 'R$ 70', category: 'escova' },
@@ -50,7 +50,7 @@ export const ServicesSection: React.FC = () => {
 
                 <div className="flex flex-wrap justify-center gap-3 mb-12">
                     {categories.map(cat => (
-                        <button
+                        <Button
                             key={cat.id}
                             onClick={() => setSelectedCategory(cat.id)}
                             className={`px-6 py-2 rounded-full font-medium transition cursor-pointer ${selectedCategory === cat.id
@@ -59,7 +59,7 @@ export const ServicesSection: React.FC = () => {
                                 }`}
                         >
                             {cat.name}
-                        </button>
+                        </Button>
                     ))}
                 </div>
 

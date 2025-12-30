@@ -2,6 +2,8 @@
 
 import { CheckCircle } from "lucide-react";
 import { useState } from "react";
+import { Button } from "./ui/Button";
+import { Input } from "./ui/Input";
 
 interface Service {
     id: string;
@@ -57,7 +59,7 @@ export const BookingSection: React.FC = () => {
 
         const message = `
     Olá ${clientName} 👋✨
-    Gostaria de confirmar meu agendamento:
+    Gostaria de confirmar seu agendamento:
     
     💇‍♀️ Serviço: ${serviceName}
     📅 Data: ${new Date(selectedDate).toLocaleDateString('pt-BR')}
@@ -123,14 +125,13 @@ export const BookingSection: React.FC = () => {
     }
 
     return (
-        <section className="py-16 bg-gradient-to-br from-pink-50 to-purple-50">
+        <section className="py-20 bg-gradient-to-br from-pink-50 to-purple-50">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4">Agende seu Horário</h2>
                     <p className="text-xl text-gray-600">Preencha os dados abaixo para realizar seu agendamento</p>
                 </div>
 
-                {/* Progress Steps */}
                 <div className="flex justify-center mb-12">
                     <div className="flex items-center space-x-4">
                         <div className={`flex items-center ${step >= 1 ? 'text-pink-600' : 'text-gray-400'}`}>
@@ -156,7 +157,7 @@ export const BookingSection: React.FC = () => {
                             <h3 className="text-2xl font-bold mb-6 text-pink-600">Escolha o Serviço</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {services.map(service => (
-                                    <button
+                                    <Button
                                         key={service.id}
                                         onClick={() => setSelectedService(service.id)}
                                         className={`p-4 rounded-xl border-2 text-left transition cursor-pointer ${selectedService === service.id
@@ -167,16 +168,16 @@ export const BookingSection: React.FC = () => {
                                         <h4 className="font-semibold text-lg mb-1 text-gray-600">{service.name}</h4>
                                         <p className="text-sm text-gray-600 mb-2">{service.duration}</p>
                                         <p className="text-pink-600 font-bold">{service.price}</p>
-                                    </button>
+                                    </Button>
                                 ))}
                             </div>
-                            <button
+                            <Button
                                 onClick={() => selectedService && setStep(2)}
                                 disabled={!selectedService}
                                 className="mt-6 w-full cursor-pointer py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition"
                             >
                                 Próximo
-                            </button>
+                            </Button>
                         </div>
                     )}
 
@@ -185,7 +186,7 @@ export const BookingSection: React.FC = () => {
                             <h3 className="text-2xl font-semibold mb-6 text-gray-700">Escolha Data e Horário</h3>
                             <div className="mb-6">
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Data</label>
-                                <input
+                                <Input
                                     type="date"
                                     value={selectedDate}
                                     onChange={(e) => setSelectedDate(e.target.value)}
@@ -197,36 +198,36 @@ export const BookingSection: React.FC = () => {
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Horário</label>
                                 <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
                                     {availableTimes.map(slot => (
-                                        <button
+                                        <Button
                                             key={slot.time}
                                             onClick={() => slot.available && setSelectedTime(slot.time)}
                                             disabled={!slot.available}
-                                            className={`py-3 transition  border-2 border-gray-300 rounded-lg focus:border-pink-600 focus:outline-none text-gray-600 font-normal  ${selectedTime === slot.time
+                                            className={`py-3 transition  border-2 border-gray-300 rounded-lg focus:border-pink-600 focus:outline-none text-pink-500 font-normal  ${selectedTime === slot.time
                                                 ? 'bg-pink-600 text-white'
                                                 : slot.available
-                                                    ? 'bg-gray-100 hover:bg-gray-200 cursor-pointer'
+                                                    ? 'border-pink-200 bg-pink-50 cursor-pointer'
                                                     : 'bg-gray-300 text-gray-400 cursor-not-allowed'
                                                 }`}
                                         >
                                             {slot.time}
-                                        </button>
+                                        </Button>
                                     ))}
                                 </div>
                             </div>
                             <div className="flex gap-4">
-                                <button
+                                <Button
                                     onClick={() => setStep(1)}
                                     className="flex-1 py-3 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition cursor-pointer"
                                 >
                                     Voltar
-                                </button>
-                                <button
+                                </Button>
+                                <Button
                                     onClick={() => selectedDate && selectedTime && setStep(3)}
                                     disabled={!selectedDate || !selectedTime}
                                     className="flex-1 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition cursor-pointer"
                                 >
                                     Próximo
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     )}
@@ -237,7 +238,7 @@ export const BookingSection: React.FC = () => {
                             <div className="space-y-4 mb-6">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Nome Completo</label>
-                                    <input
+                                    <Input
                                         type="text"
                                         value={clientName}
                                         onChange={(e) => setClientName(e.target.value)}
@@ -247,7 +248,7 @@ export const BookingSection: React.FC = () => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">Telefone/WhatsApp</label>
-                                    <input
+                                    <Input
                                         type="tel"
                                         value={clientPhone}
                                         onChange={(e) => setClientPhone(e.target.value)}
@@ -263,19 +264,19 @@ export const BookingSection: React.FC = () => {
                                 <p className='text-gray-600 font-normal'><strong className='text-gray-600 font-normal'>Horário:</strong> {selectedTime}</p>
                             </div>
                             <div className="flex gap-4">
-                                <button
+                                <Button
                                     onClick={() => setStep(2)}
                                     className="flex-1 py-3 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:bg-gray-50 transition cursor-pointer"
                                 >
                                     Voltar
-                                </button>
-                                <button
+                                </Button>
+                                <Button
                                     onClick={handleSubmit}
                                     disabled={!clientName || !clientPhone}
                                     className="flex-1 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg transition cursor-pointer"
                                 >
                                     Confirmar Agendamento
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     )}

@@ -2,13 +2,13 @@
 
 import React, { useState } from 'react';
 
-import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { ServicesSection } from './components/ServicesSection';
-import { BookingSection } from './components/BookingSection';
-import { ContactSection } from './components/ContactSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
-import { Footer } from './components/Footer';
+import { Header } from './src/components/Header';
+import { Hero } from './src/components/Hero';
+import { ServicesSection } from './src/components/ServicesSection';
+import { BookingSection } from './src/components/BookingSection';
+import { ContactSection } from './src/components/ContactSection';
+import { TestimonialsSection } from './src/components/TestimonialsSection';
+import { Footer } from './src/components/Footer';
 
 const App: React.FC = () => {
   const [currentSection, setCurrentSection] = useState('home');

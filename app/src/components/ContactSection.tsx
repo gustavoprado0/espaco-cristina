@@ -1,4 +1,6 @@
 import { Clock, Facebook, Instagram, MapPin, Phone } from "lucide-react";
+import { Button } from "./ui/Button";
+import { Input } from "./ui/Input";
 
 export const ContactSection: React.FC = () => {
     return (
@@ -46,12 +48,12 @@ export const ContactSection: React.FC = () => {
                     <div className="bg-white p-8 rounded-2xl shadow-xl">
                         <h3 className="text-2xl font-bold text-gray-900 mb-6">Envie uma Mensagem</h3>
                         <form className="space-y-4">
-                            <input
+                            <Input
                                 type="text"
                                 placeholder="Seu Nome"
                                 className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-pink-600 focus:outline-none text-gray-900"
                             />
-                            <input
+                            <Input
                                 type="email"
                                 placeholder="Seu Email"
                                 className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-pink-600 focus:outline-none text-gray-900"
@@ -61,9 +63,9 @@ export const ContactSection: React.FC = () => {
                                 placeholder="Sua Mensagem"
                                 className="w-full p-3 border-2 border-gray-300 rounded-lg focus:border-pink-600 focus:outline-none text-gray-900"
                             />
-                            <button className="w-full py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition">
+                            <Button className="w-full py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition">
                                 Enviar Mensagem
-                            </button>
+                            </Button>
                         </form>
                     </div>
                 </div>

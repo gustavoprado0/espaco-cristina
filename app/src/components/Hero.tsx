@@ -1,4 +1,5 @@
 import { Clock, Sparkles, Star } from "lucide-react";
+import { Button } from "./ui/Button";
 
 export const Hero: React.FC<{ onNavigate: (section: string) => void }> = ({ onNavigate }) => {
   return (
@@ -13,18 +14,18 @@ export const Hero: React.FC<{ onNavigate: (section: string) => void }> = ({ onNa
             Há mais de 15 anos cuidando da beleza feminina com excelência, carinho e profissionalismo
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
+            <Button
               onClick={() => onNavigate('booking')}
               className="cursor-pointer px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-1 transition"
             >
               Agendar Horário
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => onNavigate('services')}
               className="cursor-pointer px-8 py-4 border-2 border-pink-600 text-pink-600 rounded-full font-semibold hover:bg-pink-50 transition"
             >
               Ver Serviços
-            </button>
+            </Button>
           </div>
         </div>
 

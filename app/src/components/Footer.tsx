@@ -1,4 +1,5 @@
 import { Scissors } from "lucide-react";
+import Link from "next/link";
 
 export const Footer: React.FC = () => {
   return (
@@ -17,10 +18,10 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Links Rápidos</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-pink-400 transition">Início</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition">Serviços</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition">Agendar</a></li>
-              <li><a href="#" className="hover:text-pink-400 transition">Contato</a></li>
+              <li><Link href="#" className="hover:text-pink-400 transition">Inícioq</Link></li>
+              <li><Link href="#" className="hover:text-pink-400 transition">Serviçosq</Link></li>
+              <li><Link href="#" className="hover:text-pink-400 transition">Agendarq</Link></li>
+              <li><Link href="#" className="hover:text-pink-400 transition">Contatoq</Link></li>
             </ul>
           </div>
           <div>
