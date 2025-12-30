@@ -2,7 +2,7 @@ export const About = () => {
     return (
         <section className="py-44 bg-gradient-to-br from-pink-50 to-purple-50">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+                <h2 className="text-4xl bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent mb-8 text-center">
                     Sobre o Espaço Cristina
                 </h2>
 
