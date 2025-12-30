@@ -35,7 +35,7 @@ const App: React.FC = () => {
       {currentSection === 'contact' && <ContactSection />}
 
       {currentSection === 'about' && (
-        <section className="py-16 bg-white pt-24">
+        <section className="py-30 bg-white pt-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
               Sobre o Espaço Cristina
