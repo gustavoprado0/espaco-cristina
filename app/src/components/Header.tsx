@@ -18,7 +18,7 @@ export const Header: React.FC<{ onNavigate: (section: string) => void }> = ({ on
               </span>
             </div>
   
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex space-x-8 cursor-pointe">
               <Button onClick={() => onNavigate('home')} className="cursor-pointer text-gray-700 hover:text-pink-600 transition">Início</Button>
               <Button onClick={() => onNavigate('services')} className="cursor-pointer text-gray-700 hover:text-pink-600 transition">Serviços</Button>
               <Button onClick={() => onNavigate('booking')} className="cursor-pointer text-gray-700 hover:text-pink-600 transition">Agendar</Button>
@@ -26,7 +26,7 @@ export const Header: React.FC<{ onNavigate: (section: string) => void }> = ({ on
               <Button onClick={() => onNavigate('contact')} className="cursor-pointer text-gray-700 hover:text-pink-600 transition">Contato</Button>
             </nav>
   
-            <Button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <Button className="md:hidden cursor-pointer" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>

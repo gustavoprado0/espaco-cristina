@@ -18,10 +18,10 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Links Rápidos</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><Link href="#" className="hover:text-pink-400 transition">Inícioq</Link></li>
-              <li><Link href="#" className="hover:text-pink-400 transition">Serviçosq</Link></li>
-              <li><Link href="#" className="hover:text-pink-400 transition">Agendarq</Link></li>
-              <li><Link href="#" className="hover:text-pink-400 transition">Contatoq</Link></li>
+              <li><Link href="#" className="hover:text-pink-400 transition">Início</Link></li>
+              <li><Link href="#" className="hover:text-pink-400 transition">Serviços</Link></li>
+              <li><Link href="#" className="hover:text-pink-400 transition">Agendar</Link></li>
+              <li><Link href="#" className="hover:text-pink-400 transition">Contato</Link></li>
             </ul>
           </div>
           <div>
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Espaço Cristina. Todos os direitos reservados.</p>
+          <p>&copy; 2026 Espaço Cristina. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
